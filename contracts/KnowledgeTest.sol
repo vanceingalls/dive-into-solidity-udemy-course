@@ -25,9 +25,8 @@ contract KnowledgeTest {
 
     function transferAll(address payable destination) external {
         require(msg.sender == owner, "ONLY_OWNER");
-        destination.transfer(address(this).balance);
-        // DeclarationError: Undeclared identifier. "getBalance" is not (or not yet) visible at this point.
-        // (bool result, ) = destination.call{value: getBalance()}("");
+        (bool success, ) = destination.call{value: address(this).balance}("");
+        require(success, "TRANSFER_FAILED");
     }
 
     function start() public {
