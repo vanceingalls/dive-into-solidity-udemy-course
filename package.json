@@ -7,5 +7,9 @@
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.6.5",
     "hardhat": "^2.9.4"
+  },
+  "dependencies": {
+    "alchemy-sdk": "^2.1.0",
+    "dotenv": "^16.0.3"
   }
 }
